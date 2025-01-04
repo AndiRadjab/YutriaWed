@@ -515,6 +515,16 @@
             isPlaying = !isPlaying;
         }
 
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                // Jeda pemutaran audio
+                song.pause();
+            } else {
+                // Lanjutkan pemutaran audio
+                song.play();
+            }
+        });
+        
         // if(!localStorage.getItem('opened')){
         //     disableScroll();
         // }
